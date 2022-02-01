@@ -21,6 +21,7 @@
 		2895A30D27A9BBE7006BFC1D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A30C27A9BBE7006BFC1D /* View.swift */; };
 		2895A30F27A9BF45006BFC1D /* CircleButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A30E27A9BF45006BFC1D /* CircleButtonAnimation.swift */; };
 		2895A31127A9C6D4006BFC1D /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 2895A31027A9C6D4006BFC1D /* Readme.md */; };
+		2895A31327A9C76A006BFC1D /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A31227A9C76A006BFC1D /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		2895A30C27A9BBE7006BFC1D /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2895A30E27A9BF45006BFC1D /* CircleButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimation.swift; sourceTree = "<group>"; };
 		2895A31027A9C6D4006BFC1D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		2895A31227A9C76A006BFC1D /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		2895A2F327A9B2B9006BFC1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2895A31227A9C76A006BFC1D /* Coin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				2895A30427A9B904006BFC1D /* HomeView.swift in Sources */,
 				2895A30827A9B9E0006BFC1D /* CircleButton.swift in Sources */,
 				2895A30F27A9BF45006BFC1D /* CircleButtonAnimation.swift in Sources */,
+				2895A31327A9C76A006BFC1D /* Coin.swift in Sources */,
 				2895A2FC27A9B3B7006BFC1D /* Color.swift in Sources */,
 				2895A2E427A9B280006BFC1D /* ContentView.swift in Sources */,
 				2895A30027A9B754006BFC1D /* Device.swift in Sources */,
