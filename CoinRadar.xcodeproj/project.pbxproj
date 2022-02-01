@@ -20,6 +20,7 @@
 		2895A30B27A9BBCF006BFC1D /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A30A27A9BBCF006BFC1D /* Frame.swift */; };
 		2895A30D27A9BBE7006BFC1D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A30C27A9BBE7006BFC1D /* View.swift */; };
 		2895A30F27A9BF45006BFC1D /* CircleButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A30E27A9BF45006BFC1D /* CircleButtonAnimation.swift */; };
+		2895A31127A9C6D4006BFC1D /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 2895A31027A9C6D4006BFC1D /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2895A30A27A9BBCF006BFC1D /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		2895A30C27A9BBE7006BFC1D /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2895A30E27A9BF45006BFC1D /* CircleButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimation.swift; sourceTree = "<group>"; };
+		2895A31027A9C6D4006BFC1D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		2895A2D527A9B27F006BFC1D = {
 			isa = PBXGroup;
 			children = (
+				2895A31027A9C6D4006BFC1D /* Readme.md */,
 				2895A2E027A9B27F006BFC1D /* CoinRadar */,
 				2895A2DF27A9B27F006BFC1D /* Products */,
 			);
@@ -274,6 +277,7 @@
 			files = (
 				2895A2E927A9B281006BFC1D /* Preview Assets.xcassets in Resources */,
 				2895A2E627A9B281006BFC1D /* Assets.xcassets in Resources */,
+				2895A31127A9C6D4006BFC1D /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
