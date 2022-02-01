@@ -43,6 +43,7 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 extension HomeView{
+    //MARK: - Views
     private var header: some View {
         HStack{
             

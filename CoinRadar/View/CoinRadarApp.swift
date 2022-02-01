@@ -14,7 +14,6 @@ struct CoinRadarApp: App {
             NavigationView{
                 HomeView()
                     .navigationBarHidden(true)
-  
             }
         }
     }
