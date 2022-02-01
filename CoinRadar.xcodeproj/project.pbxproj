@@ -25,6 +25,7 @@
 		2895A31727A9CF51006BFC1D /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A31627A9CF51006BFC1D /* PreviewProvider.swift */; };
 		2895A31A27A9CFFD006BFC1D /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A31927A9CFFD006BFC1D /* DeveloperPreview.swift */; };
 		2895A31C27A9D140006BFC1D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A31B27A9D140006BFC1D /* Double.swift */; };
+		2895A31E27A9D3C1006BFC1D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A31D27A9D3C1006BFC1D /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2895A31627A9CF51006BFC1D /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		2895A31927A9CFFD006BFC1D /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 		2895A31B27A9D140006BFC1D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		2895A31D27A9D3C1006BFC1D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		2895A30227A9B8F7006BFC1D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2895A31D27A9D3C1006BFC1D /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				2895A30B27A9BBCF006BFC1D /* Frame.swift in Sources */,
 				2895A31527A9CEAF006BFC1D /* CoinRowView.swift in Sources */,
 				2895A31C27A9D140006BFC1D /* Double.swift in Sources */,
+				2895A31E27A9D3C1006BFC1D /* HomeViewModel.swift in Sources */,
 				2895A2FA27A9B360006BFC1D /* AppStyle.swift in Sources */,
 				2895A30D27A9BBE7006BFC1D /* View.swift in Sources */,
 				2895A30427A9B904006BFC1D /* HomeView.swift in Sources */,
