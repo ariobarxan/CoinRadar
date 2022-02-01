@@ -11,14 +11,22 @@
 		2895A2E427A9B280006BFC1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2E327A9B280006BFC1D /* ContentView.swift */; };
 		2895A2E627A9B281006BFC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2895A2E527A9B281006BFC1D /* Assets.xcassets */; };
 		2895A2E927A9B281006BFC1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2895A2E827A9B281006BFC1D /* Preview Assets.xcassets */; };
+		2895A2FA27A9B360006BFC1D /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2F927A9B360006BFC1D /* AppStyle.swift */; };
+		2895A2FC27A9B3B7006BFC1D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2FB27A9B3B7006BFC1D /* Color.swift */; };
+		2895A2FE27A9B419006BFC1D /* DeviceAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2FD27A9B419006BFC1D /* DeviceAttributes.swift */; };
+		2895A30027A9B754006BFC1D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2FF27A9B754006BFC1D /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2895A2DE27A9B27F006BFC1D /* CoinRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2895A2DE27A9B27F006BFC1D /* Coin Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2895A2E127A9B27F006BFC1D /* CoinRadarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRadarApp.swift; sourceTree = "<group>"; };
 		2895A2E327A9B280006BFC1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2895A2E527A9B281006BFC1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2895A2E827A9B281006BFC1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2895A2F927A9B360006BFC1D /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		2895A2FB27A9B3B7006BFC1D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2895A2FD27A9B419006BFC1D /* DeviceAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAttributes.swift; sourceTree = "<group>"; };
+		2895A2FF27A9B754006BFC1D /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +51,7 @@
 		2895A2DF27A9B27F006BFC1D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2895A2DE27A9B27F006BFC1D /* CoinRadar.app */,
+				2895A2DE27A9B27F006BFC1D /* Coin Radar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,9 +59,14 @@
 		2895A2E027A9B27F006BFC1D /* CoinRadar */ = {
 			isa = PBXGroup;
 			children = (
-				2895A2E127A9B27F006BFC1D /* CoinRadarApp.swift */,
+				2895A2F327A9B2B9006BFC1D /* Model */,
+				2895A2F227A9B2B5006BFC1D /* View */,
+				2895A2F127A9B2AB006BFC1D /* ViewModels */,
+				2895A2F427A9B2E2006BFC1D /* Repositories */,
+				2895A2F527A9B2EE006BFC1D /* Services */,
+				2895A2F027A9B2A4006BFC1D /* Resources */,
+				2895A2EF27A9B29F006BFC1D /* Utils */,
 				2895A2E327A9B280006BFC1D /* ContentView.swift */,
-				2895A2E527A9B281006BFC1D /* Assets.xcassets */,
 				2895A2E727A9B281006BFC1D /* Preview Content */,
 			);
 			path = CoinRadar;
@@ -65,6 +78,85 @@
 				2895A2E827A9B281006BFC1D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2895A2EF27A9B29F006BFC1D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2F827A9B353006BFC1D /* Globals */,
+				2895A2F727A9B34F006BFC1D /* Enums */,
+				2895A2F627A9B316006BFC1D /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2895A2F027A9B2A4006BFC1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2E527A9B281006BFC1D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2895A2F127A9B2AB006BFC1D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2895A2F227A9B2B5006BFC1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2E127A9B27F006BFC1D /* CoinRadarApp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2895A2F327A9B2B9006BFC1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2895A2F427A9B2E2006BFC1D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2895A2F527A9B2EE006BFC1D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2895A2F627A9B316006BFC1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2FB27A9B3B7006BFC1D /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2895A2F727A9B34F006BFC1D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2F927A9B360006BFC1D /* AppStyle.swift */,
+				2895A2FF27A9B754006BFC1D /* Device.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2895A2F827A9B353006BFC1D /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				2895A2FD27A9B419006BFC1D /* DeviceAttributes.swift */,
+			);
+			path = Globals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +176,7 @@
 			);
 			name = CoinRadar;
 			productName = CoinRadar;
-			productReference = 2895A2DE27A9B27F006BFC1D /* CoinRadar.app */;
+			productReference = 2895A2DE27A9B27F006BFC1D /* Coin Radar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2895A2FA27A9B360006BFC1D /* AppStyle.swift in Sources */,
+				2895A2FC27A9B3B7006BFC1D /* Color.swift in Sources */,
 				2895A2E427A9B280006BFC1D /* ContentView.swift in Sources */,
+				2895A30027A9B754006BFC1D /* Device.swift in Sources */,
+				2895A2FE27A9B419006BFC1D /* DeviceAttributes.swift in Sources */,
 				2895A2E227A9B27F006BFC1D /* CoinRadarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +371,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -283,7 +379,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ar.z.CoinRadar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Coin Radar";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,7 +400,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,7 +408,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ar.z.CoinRadar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Coin Radar";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
