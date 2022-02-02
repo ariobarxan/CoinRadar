@@ -15,11 +15,11 @@ class CoinAPIService: ObservableObject{
     
     init(){
         
-        fetchCoins()
+        getCoins()
     }
     
     
-    private func fetchCoins(){
+    private func getCoins(){
         guard let url = URL(string: SharedResources.instance.coinAPIURL)
         else {
             print("URL for COINS is Not Valid")
@@ -27,7 +27,7 @@ class CoinAPIService: ObservableObject{
         }
         
         
-        subscription =  NetwoManager.shared.fetchData(from: url)
+        subscription =  NetwoManager.shared.getData(from: url)
                         .decode(type: [Coin].self, decoder: JSONDecoder())
                         .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedCoins in
                             guard let self = self else {return}

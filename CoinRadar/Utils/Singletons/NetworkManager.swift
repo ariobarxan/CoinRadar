@@ -12,7 +12,7 @@ class NetwoManager{
     
     static let shared = NetwoManager()
         
-    func fetchData(from url: URL) -> AnyPublisher<Data, Error>{
+    func getData(from url: URL) -> AnyPublisher<Data, Error>{
             URLSession.shared
                 .dataTaskPublisher(for: url)
                 .subscribe(on: DispatchQueue.global(qos: .background))
