@@ -55,7 +55,7 @@ extension CoinRowView{
                 .frame(minWidth: 30)
             
             //Circle()
-            CoinImageView(url: coin.image)
+            CoinImageView(url: coin.image, coinID: coin.id)
                 .frame(width: 30, height: 30)
             
             Text(coin.symbol.uppercased())

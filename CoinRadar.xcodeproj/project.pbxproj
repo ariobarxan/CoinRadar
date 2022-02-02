@@ -33,6 +33,7 @@
 		28A27BC527AAE4C20075C8D6 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BC427AAE4C20075C8D6 /* CoinImageView.swift */; };
 		28A27BC727AAE4E00075C8D6 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BC627AAE4E00075C8D6 /* CoinImageViewModel.swift */; };
 		28A27BCA27AAE6920075C8D6 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BC927AAE6920075C8D6 /* CoinImageService.swift */; };
+		28A27BCC27AAF1420075C8D6 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCB27AAF1420075C8D6 /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		28A27BC427AAE4C20075C8D6 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		28A27BC627AAE4E00075C8D6 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		28A27BC927AAE6920075C8D6 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
+		28A27BCB27AAF1420075C8D6 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				2895A31927A9CFFD006BFC1D /* DeveloperPreview.swift */,
 				28A27BBC27AACA7C0075C8D6 /* Resources.swift */,
 				28A27BC027AAD85B0075C8D6 /* NetworkManager.swift */,
+				28A27BCB27AAF1420075C8D6 /* LocalFileManager.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				28A27BC727AAE4E00075C8D6 /* CoinImageViewModel.swift in Sources */,
 				2895A2FE27A9B419006BFC1D /* DeviceAttributes.swift in Sources */,
 				2895A2E227A9B27F006BFC1D /* CoinRadarApp.swift in Sources */,
+				28A27BCC27AAF1420075C8D6 /* LocalFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,8 @@ struct CoinImageView: View {
     @StateObject private var viewModel: CoinImageViewModel
     
     
-    init(url: String){
-        _viewModel = StateObject(wrappedValue: CoinImageViewModel(url: url))
+    init(url: String, coinID: String){
+        _viewModel = StateObject(wrappedValue: CoinImageViewModel(url: url, coinID: coinID))
     }
     
     var body: some View {
@@ -37,7 +37,7 @@ struct CoinImageView: View {
 
 struct CoinImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinImageView(url: dev.coin.image)
+        CoinImageView(url: dev.coin.image, coinID: dev.coin.id)
             .previewLayout(.sizeThatFits)
     }
 }
