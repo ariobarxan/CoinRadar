@@ -27,35 +27,13 @@ class CoinAPIService: ObservableObject{
         }
         
         
-        subscription = URLSession.shared
-                        .dataTaskPublisher(for: url)
-                        .subscribe(on: DispatchQueue.global(qos: .background))
-                        .tryMap { output -> Data in
-                            guard let response = output.response as? HTTPURLResponse,
-                                  response.statusCode >= 200 && response.statusCode < 300
-                            else {
-                                throw URLError(.badServerResponse)
-                            }
-                
-                            return output.data
-                        }
-                        .receive(on: DispatchQueue.main)
+        subscription =  NetwoManager.shared.fetchData(from: url)
                         .decode(type: [Coin].self, decoder: JSONDecoder())
-                        .sink(receiveCompletion: { completion in
-                            switch completion{
-                            case .finished:
-                                break
-                            case .failure(let error):
-                                print("Sinking Error \(error.localizedDescription)")
-                                break
-                            }
-                        }) { [weak self] returnedCoins in
+                        .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedCoins in
                             guard let self = self else {return}
                             self.coins     = returnedCoins
                             self.subscription?.cancel()
-                        }
-            
-        
+                        })
     }
     
     
