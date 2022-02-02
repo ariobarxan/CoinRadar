@@ -26,6 +26,8 @@ struct HomeView: View {
                 header
                     .padding(.horizontal)
                 
+                SearchBarView(searchString: $viewModel.searchString)
+                
                 //Coin Row Titles
                 columnTitles
                 

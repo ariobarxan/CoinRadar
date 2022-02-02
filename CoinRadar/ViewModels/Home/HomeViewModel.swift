@@ -9,11 +9,11 @@ import SwiftUI
 import Combine
 
 final class HomeViewModel: ObservableObject{
-    @Published var coins: [Coin]        = []
-    @Published var profolioCoin: [Coin] = []
-    
-    private let APIService = CoinAPIService()
-    private var cancellables = Set<AnyCancellable>()
+    @Published var coins: [Coin]         = []
+    @Published var profolioCoin: [Coin]  = []
+    @Published var searchString: String  = ""
+    private let APIService               = CoinAPIService()
+    private var cancellables             = Set<AnyCancellable>()
     
     init(){
         addSubscribers()
