@@ -7,5 +7,11 @@
 
 ### Online Tools
 [Convert JSON data to Swift Model](https://app.quicktype.io/)
+[Testing push notification](https://www.pushtry.com/)
 
+## Descriptions
 
+###APIService
+
+####CoinAPIService
+I used Combine framework to download data from CoinGecko API service. This APIService is responsible to bring back all the coins that are requested. I used single Cancellable for the sake of simplicity. 
