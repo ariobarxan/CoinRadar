@@ -215,4 +215,10 @@ final class DeveloperPreview{
        currentHoldings: 1.5)
     
     let homeViewModel = HomeViewModel()
+    
+    let statMarketCap         = Statistic(title: "Market Cap", value: "$12.5Bn", percentage: 25.34)
+    let statPortfolioNegative = Statistic(title: "Portfolio Volume", value: "$50.4K", percentage: -5.34)
+    let statTotalVolume       = Statistic(title: "Total Volume", value:"$1.3Tr")
+    let stat24HourVolume      = Statistic(title: "24h Volume", value: "336.3Bn")
+    let statBTCDominance      = Statistic(title: "BTC Dominence", value: "42.61%")
 }

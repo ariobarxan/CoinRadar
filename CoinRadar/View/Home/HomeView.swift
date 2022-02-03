@@ -26,6 +26,8 @@ struct HomeView: View {
                 header
                     .padding(.horizontal)
                 
+                HomeStatView(showPortfolio: $showPortfolio)
+                
                 SearchBarView(searchString: $viewModel.searchString)
                 
                 //Coin Row Titles
