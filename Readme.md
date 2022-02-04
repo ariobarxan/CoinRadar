@@ -27,3 +27,4 @@ I used Combine framework to download data from CoinGecko API service. This APISe
 - [ ] Remove by swiping 
 - [x] The pull down functionality(for coin lists)
 
+

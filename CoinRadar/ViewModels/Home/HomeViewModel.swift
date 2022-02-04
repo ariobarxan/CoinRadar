@@ -14,12 +14,13 @@ final class HomeViewModel: ObservableObject{
     @Published var profolioCoin: [Coin]     = []
     @Published var searchString: String     = ""
     @Published var isLoading:    Bool       = false
+    @Published var sortOption:   SortOption = .holdings
     private let coinAPIService              = CoinAPIService()
     private let marketAPIService            = MarketAPIService()
     private let portfolioCDService          = PortfolioDataService()
     private var cancellables                = Set<AnyCancellable>()
     
-    
+   
     
     init(){
         addSubscribers()
@@ -27,11 +28,11 @@ final class HomeViewModel: ObservableObject{
 
     private func addSubscribers(){
         
-        //Search String and APIService combined
+        ///Search String and APIService combined -> Update coins base on search and sort option
         $searchString
-            .combineLatest(coinAPIService.$coins)
+            .combineLatest(coinAPIService.$coins, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map(filteredCoins)
+            .map(filterAndSortCoins)
             .sink { [weak self] filteredCoins in
                 self?.coins = filteredCoins
             }
@@ -39,18 +40,19 @@ final class HomeViewModel: ObservableObject{
         
         
         
-        //Portfolio Coins
+        ///Portfolio Coins
         $coins
             .combineLatest(portfolioCDService.$savedEntities)
             .map(mapAllCoinsToPortfolioCoin)
             .sink { [weak self] returnedCoins in
-                self?.profolioCoin = returnedCoins
+                guard let self = self else {return}
+                self.profolioCoin = self.sortPortfolioCoinIfNeeded(coins: returnedCoins)
             }
             .store(in: &cancellables)
         
         
         
-        //Market data
+        ///Market data
         marketAPIService.$marketData
             .combineLatest($profolioCoin)
             .map(mapGlobalMarketData)
@@ -60,10 +62,18 @@ final class HomeViewModel: ObservableObject{
             }
             .store(in: &cancellables)
     }
+    private func filterAndSortCoins(searchString: String, coins: [Coin], sort sortOption: SortOption) -> [Coin]{
+        ///Filter
+        var updatedCoins = filteredCoins(text: searchString, coins: coins)
+        
+        ///Sort
+        sortCoins(sortOption, coins: &updatedCoins)
+        
+        return updatedCoins
+    }
     private func filteredCoins(text searchString: String, coins: [Coin]) -> [Coin] {
         guard !searchString.isEmpty else {
             return coins
-            
         }
         let lowerdCaseSearchString = searchString.lowercased()
         
@@ -71,6 +81,30 @@ final class HomeViewModel: ObservableObject{
             return coin.name.lowercased().contains(lowerdCaseSearchString) ||
             coin.symbol.lowercased().contains(lowerdCaseSearchString) ||
             coin.id.lowercased().contains(lowerdCaseSearchString)
+        }
+    }
+    private func sortCoins(_ sortOption: SortOption, coins: inout [Coin]){
+        switch sortOption{
+            case .rank, .holdings:
+                coins.sort{$0.rank < $1.rank}
+            case .rankReversed, .holdingsReversed:
+                coins.sort{$0.rank > $1.rank}
+            case .price:
+                coins.sort{$0.currentPrice > $1.currentPrice}
+            case .priceReversed:
+                coins.sort{$0.currentPrice < $1.currentPrice}
+        }
+    }
+    private func sortPortfolioCoinIfNeeded(coins: [Coin]) -> [Coin]{
+       ///Only sort by holding or holdingReverser
+        switch sortOption{
+            case .holdings:
+            return coins.sorted(by: {$0.currentHoldingsValue > $1.currentHoldingsValue})
+            case .holdingsReversed:
+                return coins.sorted(by: {$0.currentHoldingsValue < $1.currentHoldingsValue})
+            
+            default:
+                return coins
         }
     }
     private func mapGlobalMarketData(_ data: MarketData?, portfolioCoin: [Coin]) -> [Statistic]{
