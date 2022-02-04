@@ -47,6 +47,11 @@ struct PortfolioView: View {
                     trailingNavBarButton
                 }
             }
+            .onChange(of: viewModel.searchString) { newValue in
+                if newValue == "" {
+                    removeSelectedCoin()
+                }
+            }
         }
     }
 }
@@ -59,10 +64,13 @@ struct PortfolioView_Previews: PreviewProvider {
 
 extension PortfolioView{
     //MARK: - Views
-    private var coinScroll: some View {
+    private var coinScroll:            some View {
         ScrollView(.horizontal){
             LazyHStack{
-                ForEach(viewModel.coins){ coin in
+                ForEach(viewModel.searchString.isEmpty ?
+                        viewModel.profolioCoin :
+                        viewModel.coins
+                ){ coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
@@ -76,7 +84,7 @@ extension PortfolioView{
                         )
                         .onTapGesture {
                             withAnimation(.easeIn){
-                                self.selectedCoin = coin
+                                self.updateSelectedCoin(coin: coin)
                             }
                         }
                   
@@ -106,7 +114,7 @@ extension PortfolioView{
 
                 TextField("Ex. 1.4", text: $quantity)
                     .multilineTextAlignment(.trailing)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.decimalPad)
             }
 
             Divider()
@@ -123,7 +131,7 @@ extension PortfolioView{
         .font(.headline)
         .animation(nil, value: UUID())
     }
-    private var trailingNavBarButton: some View {
+    private var trailingNavBarButton:  some View {
         HStack(spacing: 10){
             Image(systemName: "checkmark")
                 .opacity(showCheckMark ? 1.0 : 0.0)
@@ -154,11 +162,14 @@ extension PortfolioView{
         
         return 0
     }
+    
     private func saveButtonPressed() {
-        guard selectedCoin != nil else {return}
+        guard let coin   = selectedCoin,
+              let amount = Double(quantity)
+        else {return}
         
         ///Save to portfolio
-        
+        viewModel.updatePortfolio(coin: coin, amount: amount)
         
         ///Show Checkmark and Remove the selected coin
         withAnimation {
@@ -178,9 +189,20 @@ extension PortfolioView{
         
     }
     
-    private func removeSelectedCoin(){
+    private func removeSelectedCoin() {
         selectedCoin = nil
         viewModel.searchString = ""
+    }
+    
+    private func updateSelectedCoin(coin: Coin){
+        selectedCoin = coin
+        
+        if let portfolioCoin = viewModel.profolioCoin.first(where: {$0.id == coin.id}),
+           let amount = portfolioCoin.currentHoldings{
+                quantity = "\(amount)"
+        }else{
+            quantity = ""
+        }
     }
 }
 
