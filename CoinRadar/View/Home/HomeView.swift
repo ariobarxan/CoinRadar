@@ -10,19 +10,24 @@ import SwiftUI
 struct HomeView: View {
     
     //MARK: - Var
-    @State private var showPortfolio = false
+    @State private var showPortfolio     = false
+    @State private var showPortfolioView = false
     
     @EnvironmentObject private var viewModel: HomeViewModel
     
     //MARK: - MainBody
     var body: some View {
         ZStack{
-            //Background Layer
+            ///Background Layer
             backgroundView
+                .sheet(isPresented: $showPortfolioView) {
+                    PortfolioView()
+                        .environmentObject(viewModel)
+                }
             
-            //Content Layer
+            ///Content Layer
             VStack{
-                //View Header
+                ///View Header
                 header
                     .padding(.horizontal)
                 
@@ -30,16 +35,16 @@ struct HomeView: View {
                 
                 SearchBarView(searchString: $viewModel.searchString)
                 
-                //Coin Row Titles
+                ///Coin Row Titles
                 columnTitles
                 
-                //List of all Coins
+                ///List of all Coins
                 if !showPortfolio {
                     coinsList
                         .transition(.move(edge: .leading))
                 }
                 
-                //List of Portfolio Coins
+                ///List of Portfolio Coins
                 if showPortfolio {
                     portfolioList
                         .transition(.move(edge: .trailing))
@@ -72,6 +77,11 @@ extension HomeView{
             //Left Button
             CircleButton(iconName: showPortfolio ? "plus" : "info")
                 .animation(nil, value: showPortfolio)
+                .onTapGesture {
+                    if showPortfolio{
+                        self.showPortfolioView.toggle()
+                    }
+                }
                 .background(
                     CircleButtonAnimation(animate: $showPortfolio)
                 )
