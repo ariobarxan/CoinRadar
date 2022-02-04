@@ -16,7 +16,7 @@
 ### APIService
 ---
 
-**CoinAPIService**
+**CoinAPIService: **
 I used Combine framework to download data from CoinGecko API service. This APIService is responsible to bring back all the coins that are requested. I used single Cancellable for the sake of simplicity. 
 
 
@@ -25,4 +25,5 @@ I used Combine framework to download data from CoinGecko API service. This APISe
 - [ ] Create a error system
 - [ ] Add a Repository level between Services and ViewModels
 - [ ] Remove by swiping 
+- [x] The pull down functionality(for coin lists)
 

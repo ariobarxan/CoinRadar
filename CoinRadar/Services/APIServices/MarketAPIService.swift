@@ -17,7 +17,7 @@ class MarketAPIService: ObservableObject{
         downloadMarketData()
     }
         
-    private func downloadMarketData(){
+    func downloadMarketData(){
         guard let url = URL(string: SharedResources.instance.marketAPIURL)
         else {
             print("URL for Market is Not Valid")
@@ -26,11 +26,11 @@ class MarketAPIService: ObservableObject{
         
         
         subscription =  NetwoManager.shared.getData(from: url)
-                        .decode(type: GlobalData.self, decoder: JSONDecoder())
-                        .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
-                            guard let self = self else {return}
-                            self.marketData     = returnedGlobalData.data
-                            self.subscription?.cancel()
-                        })
+            .decode(type: GlobalData.self, decoder: JSONDecoder())
+            .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
+                guard let self = self else {return}
+                self.marketData     = returnedGlobalData.data
+                self.subscription?.cancel()
+            })
     }
 }

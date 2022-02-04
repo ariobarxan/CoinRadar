@@ -138,6 +138,10 @@ extension HomeView{
             }
         }
         .listStyle(PlainListStyle())
+        .refreshable {
+            //animation
+            viewModel.reloadData()
+        }
     }
     private var portfolioList:  some View {
         List{
