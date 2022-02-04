@@ -23,6 +23,8 @@ class SharedResources{
     
     let marketAPIURL = "https://api.coingecko.com/api/v3/global"
     
+    let coinDetailAPIURL = " https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
+    
    // let CDPortfolioName = "PortfolioContainer"
 }
 
