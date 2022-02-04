@@ -10,9 +10,10 @@ import SwiftUI
 struct HomeView: View {
     
     //MARK: - Var
-    @State private var showPortfolio     = false
-    @State private var showPortfolioView = false
-    
+    @State private var showPortfolio        = false
+    @State private var showPortfolioView    = false
+    @State private var selectedCoin: Coin?  = nil
+    @State private var showDetailView: Bool = false
     @EnvironmentObject private var viewModel: HomeViewModel
     
     //MARK: - MainBody
@@ -53,6 +54,11 @@ struct HomeView: View {
                 Spacer(minLength: 0)
             }
         }
+        .background(
+            NavigationLink(isActive: $showDetailView,
+                           destination: {DetailLoadingView(coin: $selectedCoin)},
+                           label: {EmptyView()})
+        )
     }
 }
 
@@ -185,6 +191,9 @@ extension HomeView{
                     .listRowInsets(
                         .init(top: 10, leading: 0, bottom: 10, trailing: 10)
                     )
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(PlainListStyle())
@@ -200,8 +209,16 @@ extension HomeView{
                     .listRowInsets(
                         .init(top: 10, leading: 0, bottom: 10, trailing: 10)
                     )
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(PlainListStyle())
+    }
+    
+    private func segue(coin: Coin){
+        selectedCoin = coin
+        showDetailView.toggle()
     }
 }
