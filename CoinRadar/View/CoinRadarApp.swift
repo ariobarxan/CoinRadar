@@ -11,8 +11,10 @@ import SwiftUI
 struct CoinRadarApp: App {
     
     //MARK: - Vars
+    @State private var showLunchView   = true
     @StateObject private var viewModel = HomeViewModel()
     
+    //MARK: - Initializer
     init(){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes      = [.foregroundColor: UIColor(Color.theme.accent)]
@@ -21,11 +23,22 @@ struct CoinRadarApp: App {
     //MARK: - Main Window
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                HomeView()
-                    .navigationBarHidden(true)
+            
+            ZStack{
+                NavigationView{
+                    HomeView()
+                        .navigationBarHidden(true)
+                }
+                .environmentObject(viewModel)
+                
+                ZStack{
+                    if showLunchView{
+                        LunchView(showLunchView: $showLunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(2.0)
             }
-            .environmentObject(viewModel)
         }
     }
 }

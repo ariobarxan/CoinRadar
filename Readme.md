@@ -28,4 +28,6 @@ I used Combine framework to download data from CoinGecko API service. This APISe
 - [x] The pull down functionality(for coin lists)
 - [ ] Find another view to make the Coin cell view clickable (currenctly is with background color)
 - [ ] Protocol for API Service and put all the API Links there 
+- [ ] Show Error for network problems
+- [ ] Downloading All coins 
 

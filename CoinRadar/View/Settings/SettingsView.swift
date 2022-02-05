@@ -79,7 +79,7 @@ extension SettingsView{
                     .frame(height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
-                Text("The data which is powered this app come from Coin Gecko Website.")
+                Text("The data which is powered this app come from Coin Gecko Website. Prices may be slightly delaied due to API Provider Free Usage Policy")
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundColor(Color.theme.accent)
