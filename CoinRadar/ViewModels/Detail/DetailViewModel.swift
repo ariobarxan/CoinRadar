@@ -10,22 +10,27 @@ import Combine
 
 class DetailViewModel: ObservableObject{
     
+    @Published var coinDescription: String? = nil
+    @Published var websiteURL:      String? = nil
+    @Published var reditURL:        String? = nil
+    
     @Published var overViewStatistics:   [Statistic] = []
     @Published var additionalStatistics: [Statistic] = []
     @Published var coin: Coin
     
-    private let coinDetailService: CoinDetailAPIService
+    
+    private let coinDetaiAPIlService: CoinDetailAPIService
     private var cancellables = Set<AnyCancellable>()
     
     
     init(coin: Coin){
         self.coin              = coin
-        self.coinDetailService = CoinDetailAPIService(coinID: coin.id)
+        self.coinDetaiAPIlService = CoinDetailAPIService(coinID: coin.id)
         addSubscribers()
     }
     
     private func addSubscribers() {
-        coinDetailService.$coinDetails
+        coinDetaiAPIlService.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatisticArrays)
             .sink { [weak self] returnedAraays in
@@ -33,6 +38,18 @@ class DetailViewModel: ObservableObject{
                 self?.additionalStatistics = returnedAraays.additional
             }
             .store(in: &cancellables)
+        
+        
+        ///Refactor and grab data in mapping
+        coinDetaiAPIlService.$coinDetails
+            .sink { [weak self] returnedDetails in
+                self?.coinDescription = returnedDetails?.readableDescription
+                self?.websiteURL      = returnedDetails?.links?.homepage?.first
+                self?.reditURL        = returnedDetails?.links?.subredditURL
+            }
+            .store(in: &cancellables)
+        
+        
     }
     private func mapDataToStatisticArrays(details returnedDetails: CoinDetailData?, coin: Coin) -> (overview: [Statistic], additional: [Statistic]){
         

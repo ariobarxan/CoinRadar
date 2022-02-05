@@ -31,6 +31,7 @@ struct DetailView: View {
     //MARK: - Var
     @StateObject private var viewModel: DetailViewModel
     
+    @State private var showDes: Bool       = false
     @State private var columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -50,12 +51,13 @@ struct DetailView: View {
                     .padding(.vertical)
                 
                 VStack(spacing: 20){
-                   
-                        
-                    
                     overViewSection
 
+                    descriptionSection
+                    
                     addtionalDetailSection
+                    
+                    webPagesSection
                 }
                 .padding()
             }
@@ -79,6 +81,19 @@ struct DetailView_Previews: PreviewProvider {
 
 extension DetailView{
     //MARK: - Views
+    private var navigationTrailingItem: some View {
+        HStack{
+            
+            Text(viewModel.coin.symbol.uppercased())
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
+            
+            CoinImageView(url: viewModel.coin.image,
+                          coinID: viewModel.coin.id)
+                .frame(size: 25)
+            
+        }
+    }
     private var overViewSection:        some View {
         VStack(spacing: 20){
             ///Title
@@ -99,6 +114,33 @@ extension DetailView{
                 ForEach(viewModel.overViewStatistics){ statistic in
                     StatisticView(stat: statistic)
                 }
+            }
+        }
+    }
+    private var descriptionSection:     some View {
+        ZStack{
+            if let coinDescription = viewModel.coinDescription, !coinDescription.isEmpty{
+                
+                VStack(alignment: .leading){
+                    Text(coinDescription)
+                        .lineLimit(showDes ? nil : 3)
+                        .font(.callout)
+                        .foregroundColor(Color.theme.secondaryText)
+                
+                    Button(action: {
+                        withAnimation(.easeInOut){
+                            showDes.toggle()
+                        }
+                    }) {
+                        Text(showDes ? "Less" : "Read more ..")
+                            .font(.caption)
+                            .bold()
+                            .padding(.vertical, 4)
+                    }
+                    .tint(.blue)
+                    
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
@@ -125,17 +167,21 @@ extension DetailView{
             }
         }
     }
-    private var navigationTrailingItem: some View {
-        HStack{
+    private var webPagesSection:        some View {
+        VStack(alignment: .leading, spacing: 20){
+            if let websiteURLString = viewModel.websiteURL,
+               let url = URL(string: websiteURLString){
+                Link("Website", destination: url)
+            }
             
-            Text(viewModel.coin.symbol.uppercased())
-                .font(.headline)
-                .foregroundColor(Color.theme.secondaryText)
-            
-            CoinImageView(url: viewModel.coin.image,
-                          coinID: viewModel.coin.id)
-                .frame(size: 25)
-            
+            if let redditURLString = viewModel.reditURL,
+               let url = URL(string: redditURLString){
+                Link("Reddit", destination: url)
+            }
         }
+        .tint(.blue)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.headline)
     }
+    
 }
