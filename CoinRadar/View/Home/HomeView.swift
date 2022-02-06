@@ -42,8 +42,15 @@ struct HomeView: View {
                 
                 ///List of all Coins
                 if !showPortfolio {
-                    coinsList
-                        .transition(.move(edge: .leading))
+                    ZStack(alignment: .top){
+                        
+                        if viewModel.profolioCoin.isEmpty && viewModel.searchString.isEmpty{
+                            portfolioEmptyView
+                        }else{
+                            coinsList
+                        }
+                    }
+                    .transition(.move(edge: .leading))
                 }
                 
                 ///List of Portfolio Coins
@@ -78,10 +85,10 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView{
     //MARK: - Views
-    private var backgroundView: some View {
+    private var backgroundView:     some View {
         Color.theme.background.ignoresSafeArea()
     }
-    private var header:         some View {
+    private var header:             some View {
         HStack{
             
             //Left Button
@@ -120,7 +127,7 @@ extension HomeView{
             }
         }
     }
-    private var columnTitles:   some View {
+    private var columnTitles:       some View {
         HStack{
             //Left title
             HStack(spacing: 4){
@@ -190,7 +197,7 @@ extension HomeView{
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
     }
-    private var coinsList:      some View {
+    private var coinsList:          some View {
         List{
             ForEach(viewModel.coins){ coin in
                 CoinRowView(coin: coin, showHoldingColumn: false)
@@ -208,7 +215,7 @@ extension HomeView{
             viewModel.reloadData()
         }
     }
-    private var portfolioList:  some View {
+    private var portfolioList:      some View {
         List{
             ForEach(viewModel.profolioCoin){ coin in
                 CoinRowView(coin: coin, showHoldingColumn: true)
@@ -221,6 +228,13 @@ extension HomeView{
             }
         }
         .listStyle(PlainListStyle())
+    }
+    private var portfolioEmptyView: some View {
+        Text("You haven't added any coins to portfolio yet. Click the plus button to add new investment to your portfolio.")
+            .font(.callout)
+            .foregroundColor(Color.theme.accent)
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center).padding(15)
     }
     
     private func segue(coin: Coin){

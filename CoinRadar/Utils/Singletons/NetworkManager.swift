@@ -15,9 +15,10 @@ class NetwoManager{
     func getData(from url: URL) -> AnyPublisher<Data, Error>{
             URLSession.shared
                 .dataTaskPublisher(for: url)
-                .subscribe(on: DispatchQueue.global(qos: .background))
+                //.subscribe(on: DispatchQueue.global(qos: .background))
                 .tryMap{try self.handleURLResponse(output: $0, url: url)}
-                .receive(on: DispatchQueue.main)
+                .retry(5)
+                //.receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
                 
     }

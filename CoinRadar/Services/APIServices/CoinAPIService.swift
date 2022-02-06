@@ -29,6 +29,7 @@ class CoinAPIService: ObservableObject{
         
         subscription =  NetwoManager.shared.getData(from: url)
             .decode(type: [Coin].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedCoins in
                 guard let self = self else {return}
                 self.coins     = returnedCoins

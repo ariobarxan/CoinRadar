@@ -29,6 +29,7 @@ struct CoinRadarApp: App {
                     HomeView()
                         .navigationBarHidden(true)
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
                 .environmentObject(viewModel)
                 
                 ZStack{

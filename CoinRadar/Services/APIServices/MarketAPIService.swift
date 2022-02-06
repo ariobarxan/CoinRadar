@@ -27,6 +27,7 @@ class MarketAPIService: ObservableObject{
         
         subscription =  NetwoManager.shared.getData(from: url)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetwoManager.shared.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
                 guard let self = self else {return}
                 self.marketData     = returnedGlobalData.data
