@@ -52,6 +52,9 @@ struct PortfolioView: View {
                     removeSelectedCoin()
                 }
             }
+            .background(
+                Color.theme.background.ignoresSafeArea()
+            )
         }
     }
 }

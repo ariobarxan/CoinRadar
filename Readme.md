@@ -31,3 +31,4 @@ I used Combine framework to download data from CoinGecko API service. This APISe
 - [ ] Show Error for network problems
 - [ ] Downloading All coins 
 - [ ] Decimal keyboard on Ipad
+- [ ] Default background modifier

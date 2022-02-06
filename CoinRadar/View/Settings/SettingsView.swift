@@ -17,14 +17,26 @@ struct SettingsView: View {
     //MARK: - Body
     var body: some View {
         NavigationView{
-            List{
-                personalSection
+            ZStack {
+                ///Background
+                Color.theme.background
+                    .ignoresSafeArea()
                 
-                endorsementSection
-
-                APITSection
+                ///Content
+                List{
+                    personalSection
+                        .listRowBackground( Color.theme.background.opacity(0.5))
                     
-                applicationSection
+                    endorsementSection
+                        .listRowBackground( Color.theme.background.opacity(0.5))
+                    
+                    APITSection
+                        .listRowBackground( Color.theme.background.opacity(0.5))
+                    
+                    applicationSection
+                        .listRowBackground( Color.theme.background.opacity(0.5))
+                }
+                
             }
             .tint(.blue)
             .font(.headline)
