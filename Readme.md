@@ -32,3 +32,4 @@ I used Combine framework to download data from CoinGecko API service. This APISe
 - [ ] Downloading All coins 
 - [ ] Decimal keyboard on Ipad
 - [ ] Default background modifier
+- [ ] Architecture improvements: Protocols, dependency injection
