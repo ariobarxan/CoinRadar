@@ -30,25 +30,25 @@ This app is developed for both iPhone and iPad(only Portrait mode is supported).
 
 ## Architecture
 The code is powered by MVVM architecture and usage of frameworks that as follows:
-- SwiftUI: The app main UI framework is SwiftUI. 
-- Combine: Combined is used to manage networking and events. 
-- CoreData: CoreData is used to store user portfolio data.
-- UIKit: UIkit is used rarely for the purpose of using it's UIElements where SwiftUI can't provide us with the answer.
-- Foundation
+- **SwiftUI:** The app main UI framework is SwiftUI. 
+- **Combine:** Combined is used to manage networking and events. 
+- **CoreData:** CoreData is used to store user portfolio data.
+- **UIKit:** UIkit is used rarely for the purpose of using it's UIElements where SwiftUI can't provide us with the answer.
+- **Foundation**
 
 Currently there are 4 main layers and two extra directories:
-Layers are:
-- Model: They model structs and classes are responsible for the managing(initialization and updating the objects). Whenever needed they also conform to Codable protocol to encode and decode the objects.
+<mark>Layers are:</mark>
+- **Model:** They model structs and classes are responsible for the managing(initialization and updating the objects). Whenever needed they also conform to Codable protocol to encode and decode the objects.
 
-- View: Views are mostly only responsible for showing UI elements and animations. In the current version, there are instances that view is responsible for its element's actions and updating data(this is going to be change in future versions).
+- **View:** Views are mostly only responsible for showing UI elements and animations. In the current version, there are instances that view is responsible for its element's actions and updating data(this is going to be change in future versions).
 
-- ViewModel: ViewModels are responsible to provide their relative views with the needed data. They interact with Services and get the data from them and pass the values to their views.
+- **ViewModel:** ViewModels are responsible to provide their relative views with the needed data. They interact with Services and get the data from them and pass the values to their views.
 
-- Services: Services are responsible to provide the ViewModels with needed data(from API Call, local database and local file manager).
+- **Services:** Services are responsible to provide the ViewModels with needed data(from API Call, local database and local file manager).
 
-Extra Directories are:
-- Resources: This directory holds the CoreData Containers and Assets folder
-- Utils: Utils is the directory that all the helping code implementations are stored in it.
+<mark>Extra Directories are:</mark>
+- **Resources:** This directory holds the CoreData Containers and Assets folder
+- **Utils**: Utils is the directory that all the helping code implementations are stored in it.
 
 # Documentation
 ## Model
