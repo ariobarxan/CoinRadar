@@ -1,16 +1,12 @@
 # Coin Radar
 # Screenshots
 
-<div class="row">
-  <div class="column">
-  <img src="ReadmeImages/ScreenShotHome.png" width="375" height="812">
-  </div>
+
+  <img src="ReadmeImages/ScreenShotHome.png" width="375" height="812"> <img src="ReadmeImages/ScreenShotDetail2.png" width="375" height="812">
+
   
   
-  <div class="column">
-  <img src="ReadmeImages/ScreenShotDetail2.png" width="375" height="812">
-  </div>
-</div>
+
 
 ## About
 Coin Radar is a 
