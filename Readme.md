@@ -2,6 +2,8 @@
 # Screenshots
 ![Home Screenshot](ReadmeImages/ScreenShotHome.png)
 
+<img src="ReadmeImages/ScreenShotDetail2.png" width="375" height="812">
+
 ## About
 Coin Radar is a 
 
