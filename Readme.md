@@ -1,6 +1,9 @@
 # Coin Radar
-## About
+# Screenshots
+![Home Screenshot](ReadmeImages/ScreenShotHome.png)
 
+## About
+Coin Radar is a 
 
 
 ## Features
@@ -15,7 +18,7 @@
 
 
 
-# Screenshots
+
 ## HomeView
 
 

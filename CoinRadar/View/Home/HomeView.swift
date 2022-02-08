@@ -43,20 +43,25 @@ struct HomeView: View {
                 ///List of all Coins
                 if !showPortfolio {
                     ZStack(alignment: .top){
+                    
+                        coinsList
                         
-                        if viewModel.profolioCoin.isEmpty && viewModel.searchString.isEmpty{
-                            portfolioEmptyView
-                        }else{
-                            coinsList
-                        }
                     }
                     .transition(.move(edge: .leading))
                 }
                 
                 ///List of Portfolio Coins
                 if showPortfolio {
-                    portfolioList
-                        .transition(.move(edge: .trailing))
+                    VStack{
+                    if viewModel.profolioCoin.isEmpty && viewModel.searchString.isEmpty{
+                        portfolioEmptyView
+                    }else{
+                        coinsList
+                    }
+                    
+                    }
+                    .transition(.move(edge: .trailing))
+                        
                 }
                 
                 Spacer(minLength: 0)

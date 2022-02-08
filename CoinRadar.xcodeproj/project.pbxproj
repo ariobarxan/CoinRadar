@@ -62,6 +62,12 @@
 
 /* Begin PBXFileReference section */
 		281A0DDF27AC76B5008015A2 /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
+		281A8FE027B322F200ED0C19 /* ScreenShotHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotHome.png; sourceTree = "<group>"; };
+		281A8FE127B3231C00ED0C19 /* ScreenShotPortfolio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotPortfolio.png; sourceTree = "<group>"; };
+		281A8FE227B3233100ED0C19 /* ScreenShotEditPortfolio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotEditPortfolio.png; sourceTree = "<group>"; };
+		281A8FE327B3234C00ED0C19 /* ScreenShotDetail1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotDetail1.png; sourceTree = "<group>"; };
+		281A8FE427B3236200ED0C19 /* ScreenShotDetail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotDetail2.png; sourceTree = "<group>"; };
+		281A8FE527B3237300ED0C19 /* ScreenShotLightMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotLightMode.png; sourceTree = "<group>"; };
 		28250AAF27AEFAA300ABEAE6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		28250AB127AF1C0B00ABEAE6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		28250AB327AF261500ABEAE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -126,6 +132,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281A8FDF27B3220000ED0C19 /* ReadmeImages */ = {
+			isa = PBXGroup;
+			children = (
+				281A8FE027B322F200ED0C19 /* ScreenShotHome.png */,
+				281A8FE127B3231C00ED0C19 /* ScreenShotPortfolio.png */,
+				281A8FE227B3233100ED0C19 /* ScreenShotEditPortfolio.png */,
+				281A8FE327B3234C00ED0C19 /* ScreenShotDetail1.png */,
+				281A8FE427B3236200ED0C19 /* ScreenShotDetail2.png */,
+				281A8FE527B3237300ED0C19 /* ScreenShotLightMode.png */,
+			);
+			path = ReadmeImages;
+			sourceTree = "<group>";
+		};
 		28250AB527AF2BF400ABEAE6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +206,7 @@
 		2895A2D527A9B27F006BFC1D = {
 			isa = PBXGroup;
 			children = (
+				281A8FDF27B3220000ED0C19 /* ReadmeImages */,
 				2895A31027A9C6D4006BFC1D /* Readme.md */,
 				2895A2E027A9B27F006BFC1D /* CoinRadar */,
 				2895A2DF27A9B27F006BFC1D /* Products */,
