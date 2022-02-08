@@ -1,10 +1,16 @@
 # Coin Radar
 # Screenshots
 
+<img src="ReadmeImages/ScreenShotHome.png" width="375" height="667"> <img src="ReadmeImages/ScreenShotPortfolio.png" width="375" height="667">
 
-  <img src="ReadmeImages/ScreenShotHome.png" width="375" height="812"> <img src="ReadmeImages/ScreenShotDetail2.png" width="375" height="812">
+<img src="ReadmeImages/ScreenShotEditPortfolio.png" width="375" height="667">
 
-  
+<img src="ReadmeImages/ScreenShotDetail1.png" width="375" height="667"> <img src="ReadmeImages/ScreenShotDetail1.png" width="375" height="667">
+
+<img src="ReadmeImages/ScreenShotLightMode.png" width="375" height="677">
+
+
+
   
 
 
