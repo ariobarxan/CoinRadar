@@ -1,23 +1,145 @@
 # Coin Radar
+## About
 
-## Links
-### API
+
+
+## Features
+
+
+
+## Requirements 
+
+
+
+## Architecture
+
+
+
+# Screenshots
+## HomeView
+
+
+
+## SettingView
+
+
+
+## DetailView 
+
+
+
+## PortfolioView
+
+
+
+
+
+
+# Documentation
+## Model
+### Coin
+--
+### Statistic
+--
+### MarketData
+--
+### CoinDetaileData
+
+
+## View
+### CoinRadarApp
+--
+### Lunch 
+--
+### Components -> CircleButton
+### Components -> CircleButtonAnimation
+### Components -> CoinImageView
+### Components -> SearchBarView
+### Components -> StatisticeView
+### Components -> CloseButton
+### Components -> CoinLogoView
+--
+### Home -> HomeView
+### Home -> HomeStatView
+### Home -> CoinRowView
+### Home -> PortfolioView
+--
+### Detail -> DetailView
+### Detail -> ChartView
+--
+### Settings -> SettingView
+
+
+
+## ViewModels
+### Components -> CoinImageViewModel
+--
+### Home -> HomeViewModel
+--
+### Detail -> DetailViewModel
+--
+### Settings -> SettingViewModel
+
+
+## Services
+### CoreDataServices -> PortfolioDataService
+--
+### APIServices -> CoinAPIService
+### APIServices -> CoinImageService
+### APIServices -> MarketAPIService
+### APIServices -> CoinDetailAPIService
+
+
+## Resources
+### CoreData -> PortfolioContainer
+--
+### Assets 
+
+
+## Utils 
+### Singletons -> DeveloperPreview
+### Singletons -> SharedResources
+### Singletons -> NetworkManager
+### Singletons -> LocalFileManager
+### Singletons -> HapticManager
+--
+### Modifiers -> Frame
+--
+### Globals -> DeviceAttribtes
+--
+### Enums -> AppStyle
+### Enums -> Device
+### Enums -> Errors
+### Enums -> SortOptions
+--
+### Extensions -> Color
+### Extensions -> View
+### Extensions -> PreviewProvider
+### Extensions -> Double
+### Extensions -> UIAplication
+### Extensions -> Date
+### Extensions -> String  
+
+
+
+
+
+
+
+
+# Links
+
 [API](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h)
 [API Website](https://www.coingecko.com/en/api)
 
 [Tutorial Github page](https://github.com/SwiftfulThinking)
 
-### Online Tools
+
+# Tools
 [Convert JSON data to Swift Model](https://app.quicktype.io/)
-[Testing push notification](https://www.pushtry.com/)
 
-## Descriptions
 
-### APIService
----
 
-**CoinAPIService:**
-I used Combine framework to download data from CoinGecko API service. This APIService is responsible to bring back all the coins that are requested. I used single Cancellable for the sake of simplicity. 
 
 
 ## Tasks
