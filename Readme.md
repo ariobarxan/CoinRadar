@@ -1,15 +1,7 @@
 # Coin Radar
 ## Screenshots
 
-![App Gif](CoinRadar.gif)
-
-<img src="ReadmeImages/ScreenShotHome.png" width="375" height="736"> <img src="ReadmeImages/ScreenShotPortfolio.png" width="375" height="736">
-
-<img src="ReadmeImages/ScreenShotEditPortfolio.png" width="375" height="736">
-
-<img src="ReadmeImages/ScreenShotDetail1.png" width="375" height="736"> <img src="ReadmeImages/ScreenShotDetail2.png" width="375" height="736">
-
-<img src="ReadmeImages/ScreenShotLightMode.png" width="375" height="736">
+<img src="ReadmeImages/CoinRadar.gif" width="414" height="896">
 
 
 ## About
