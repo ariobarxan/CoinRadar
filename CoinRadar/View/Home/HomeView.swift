@@ -56,7 +56,7 @@ struct HomeView: View {
                     if viewModel.profolioCoin.isEmpty && viewModel.searchString.isEmpty{
                         portfolioEmptyView
                     }else{
-                        coinsList
+                        portfolioList
                     }
                     
                     }

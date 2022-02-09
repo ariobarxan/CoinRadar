@@ -1,6 +1,8 @@
 # Coin Radar
 ## Screenshots
 
+! [App Gif](ReadmeImages/CoinRadar.gif)
+
 <img src="ReadmeImages/ScreenShotHome.png" width="375" height="736"> <img src="ReadmeImages/ScreenShotPortfolio.png" width="375" height="736">
 
 <img src="ReadmeImages/ScreenShotEditPortfolio.png" width="375" height="736">
@@ -37,6 +39,7 @@ The code is powered by MVVM architecture and usage of frameworks that as follows
 - **Foundation**
 
 Currently there are 4 main layers and two extra directories:
+
 <mark>Layers are:</mark>
 - **Model:** They model structs and classes are responsible for the managing(initialization and updating the objects). Whenever needed they also conform to Codable protocol to encode and decode the objects.
 
@@ -50,9 +53,15 @@ Currently there are 4 main layers and two extra directories:
 - **Resources:** This directory holds the CoreData Containers and Assets folder
 - **Utils**: Utils is the directory that all the helping code implementations are stored in it.
 
+
 # Documentation
+The given description is succint as much as possible. View descriptions are only limited to cases which are out of ordinary implementation or have some important points.
+
+
 ## Model
+The model layer constitutes the gateway to the data that are shown in the app. They are created based on the API JSON response. They conform to Codeable protocol(responsible for coding and encoding). Initialization and updating the objects are done in their structs.
 ### Coin
+
 --
 ### Statistic
 --

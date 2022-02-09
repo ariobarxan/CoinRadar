@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		281A0DE027AC76B5008015A2 /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A0DDF27AC76B5008015A2 /* CoinLogoView.swift */; };
-		281A424227B3249A007EA7B5 /* ScreenShotLightMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A423C27B32499007EA7B5 /* ScreenShotLightMode.png */; };
-		281A424327B3249A007EA7B5 /* ScreenShotDetail1.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A423D27B32499007EA7B5 /* ScreenShotDetail1.png */; };
-		281A424427B3249A007EA7B5 /* ScreenShotHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A423E27B3249A007EA7B5 /* ScreenShotHome.png */; };
-		281A424527B3249A007EA7B5 /* ScreenShotDetail2.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A423F27B3249A007EA7B5 /* ScreenShotDetail2.png */; };
-		281A424627B3249A007EA7B5 /* ScreenShotPortfolio.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A424027B3249A007EA7B5 /* ScreenShotPortfolio.png */; };
-		281A424727B3249A007EA7B5 /* ScreenShotEditPortfolio.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A424127B3249A007EA7B5 /* ScreenShotEditPortfolio.png */; };
 		28250AB027AEFAA300ABEAE6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28250AAF27AEFAA300ABEAE6 /* ChartView.swift */; };
 		28250AB227AF1C0B00ABEAE6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28250AB127AF1C0B00ABEAE6 /* Date.swift */; };
 		28250AB427AF261500ABEAE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28250AB327AF261500ABEAE6 /* String.swift */; };
@@ -36,6 +30,7 @@
 		28913F0427AD742B005F2E75 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28913F0327AD742B005F2E75 /* DetailViewModel.swift */; };
 		28913F0627AD7E99005F2E75 /* CoinDetaileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28913F0527AD7E99005F2E75 /* CoinDetaileData.swift */; };
 		28913F0827AD81F2005F2E75 /* CoinDetailAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28913F0727AD81F2005F2E75 /* CoinDetailAPIService.swift */; };
+		289532D127B404F700A03B63 /* CoinRadar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 289532D027B404F700A03B63 /* CoinRadar.gif */; };
 		2895A2E227A9B27F006BFC1D /* CoinRadarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895A2E127A9B27F006BFC1D /* CoinRadarApp.swift */; };
 		2895A2E627A9B281006BFC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2895A2E527A9B281006BFC1D /* Assets.xcassets */; };
 		2895A2E927A9B281006BFC1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2895A2E827A9B281006BFC1D /* Preview Assets.xcassets */; };
@@ -68,12 +63,6 @@
 
 /* Begin PBXFileReference section */
 		281A0DDF27AC76B5008015A2 /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
-		281A423C27B32499007EA7B5 /* ScreenShotLightMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotLightMode.png; sourceTree = "<group>"; };
-		281A423D27B32499007EA7B5 /* ScreenShotDetail1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotDetail1.png; sourceTree = "<group>"; };
-		281A423E27B3249A007EA7B5 /* ScreenShotHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotHome.png; sourceTree = "<group>"; };
-		281A423F27B3249A007EA7B5 /* ScreenShotDetail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotDetail2.png; sourceTree = "<group>"; };
-		281A424027B3249A007EA7B5 /* ScreenShotPortfolio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotPortfolio.png; sourceTree = "<group>"; };
-		281A424127B3249A007EA7B5 /* ScreenShotEditPortfolio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShotEditPortfolio.png; sourceTree = "<group>"; };
 		28250AAF27AEFAA300ABEAE6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		28250AB127AF1C0B00ABEAE6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		28250AB327AF261500ABEAE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -96,6 +85,7 @@
 		28913F0327AD742B005F2E75 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		28913F0527AD7E99005F2E75 /* CoinDetaileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetaileData.swift; sourceTree = "<group>"; };
 		28913F0727AD81F2005F2E75 /* CoinDetailAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailAPIService.swift; sourceTree = "<group>"; };
+		289532D027B404F700A03B63 /* CoinRadar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CoinRadar.gif; sourceTree = "<group>"; };
 		2895A2DE27A9B27F006BFC1D /* Coin Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2895A2E127A9B27F006BFC1D /* CoinRadarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRadarApp.swift; sourceTree = "<group>"; };
 		2895A2E527A9B281006BFC1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,12 +131,7 @@
 		281A8FDF27B3220000ED0C19 /* ReadmeImages */ = {
 			isa = PBXGroup;
 			children = (
-				281A423D27B32499007EA7B5 /* ScreenShotDetail1.png */,
-				281A423F27B3249A007EA7B5 /* ScreenShotDetail2.png */,
-				281A424127B3249A007EA7B5 /* ScreenShotEditPortfolio.png */,
-				281A423E27B3249A007EA7B5 /* ScreenShotHome.png */,
-				281A423C27B32499007EA7B5 /* ScreenShotLightMode.png */,
-				281A424027B3249A007EA7B5 /* ScreenShotPortfolio.png */,
+				289532D027B404F700A03B63 /* CoinRadar.gif */,
 			);
 			path = ReadmeImages;
 			sourceTree = "<group>";
@@ -476,15 +461,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				281A424627B3249A007EA7B5 /* ScreenShotPortfolio.png in Resources */,
 				2895A2E927A9B281006BFC1D /* Preview Assets.xcassets in Resources */,
-				281A424727B3249A007EA7B5 /* ScreenShotEditPortfolio.png in Resources */,
 				28250ABD27AF38A200ABEAE6 /* LaunchScreen.storyboard in Resources */,
-				281A424427B3249A007EA7B5 /* ScreenShotHome.png in Resources */,
-				281A424527B3249A007EA7B5 /* ScreenShotDetail2.png in Resources */,
-				281A424227B3249A007EA7B5 /* ScreenShotLightMode.png in Resources */,
+				289532D127B404F700A03B63 /* CoinRadar.gif in Resources */,
 				2895A2E627A9B281006BFC1D /* Assets.xcassets in Resources */,
-				281A424327B3249A007EA7B5 /* ScreenShotDetail1.png in Resources */,
 				2895A31127A9C6D4006BFC1D /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
