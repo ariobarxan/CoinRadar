@@ -1,7 +1,7 @@
 # Coin Radar
 ## Screenshots
 
-! [App Gif](ReadmeImages/CoinRadar.gif)
+![App Gif]("ReadmeImages/CoinRadar.gif")
 
 <img src="ReadmeImages/ScreenShotHome.png" width="375" height="736"> <img src="ReadmeImages/ScreenShotPortfolio.png" width="375" height="736">
 
