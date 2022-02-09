@@ -53,6 +53,53 @@ The given description is succint as much as possible. View descriptions are only
 ## Model
 The model layer constitutes the gateway to the data that are shown in the app. They are created based on the API JSON response. They conform to Codeable protocol(responsible for coding and encoding). Initialization and updating the objects are done in their structs.
 ### Coin
+**Conformances protocols**
+Coin model conforms both to [Identifiable](https://developer.apple.com/documentation/swift/identifiable) and [Codeable](https://developer.apple.com/documentation/swift/codable) protocols. 
+
+Codeable protocol basically converts this struct's objects to JSON data in oreder to be sent to a API and it also decode the JSON data recieved from a API call to a object of this type. 
+
+Identifiable gives our data model a unique id so a object would be distinguishable from all other objects of this type.
+
+**CodingKeys enum**
+Encoding and decoding the data to and from this struct is possible through the implmentation of CodingKeys which is a enum that confroms to String and [CodingKey](https://developer.apple.com/documentation/swift/codingkey) protocol. This enum holds all the struct model's attributes and their relative string value in API call.(It is required if you want to conform to Codeable protocol)
+
+```
+struct Coin: Identifiable, Codable {
+    let id: String
+    let currentPrice: Double
+    .
+    .
+    .
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case currentPrice = "current_price"
+        .
+        .
+        .
+    }
+}
+```
+
+---
+**NOTE**
+We can have "currenPrice" attribute in our data model which we want to be encoded to JSON data that its relative key is "current_price". So we simply use CodingKey enum for this purpose.(If the attribute in our data model and the JSON key are the same we can simply omit givving them any string value.)
+---
+
+**Attributes**
+This model struct is created based on the [APIURL](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h). I decided to alter some of the fields in both the struct attributes and the coding keys because I simply didn't want to show the data provided with those attributes. 
+
+**updateHoldings function**
+The coin data model has a function for the purpose of updating the user portfolio(updaing user holding currencies). This function is then used whenever the user want to add a new currecny to his portfolio or update his old holdings.
+
+**currentHoldingsValue computed property**
+The user normally hasn't all the existing coins in his portfolio so based on the ammount that user holds(which is stored in the "currentHoldings" field) a coin and the coin price at a time this "currentHoldingValue" field is changed and calculated.
+
+**rank computed property**
+Each coin object's rank is determined by its market capitalization.
+
+**SparklineIn7D struct**
+This struct holds an array of price changes for each coin object.
 
 --
 ### Statistic
