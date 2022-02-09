@@ -83,6 +83,7 @@ struct Coin: Identifiable, Codable {
 
 ---
 **NOTE**
+
 We can have "currenPrice" attribute in our data model which we want to be encoded to JSON data that its relative key is "current_price". So we simply use CodingKey enum for this purpose.(If the attribute in our data model and the JSON key are the same we can simply omit givving them any string value.)
 ---
 
