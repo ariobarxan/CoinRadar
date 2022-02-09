@@ -47,7 +47,7 @@ Currently there are 4 main layers and two extra directories:
 
 
 # Documentation
-The given description is succint as much as possible. View descriptions are only limited to cases which are out of ordinary implementation or have some important points.
+The given description is as succinct as possible. View descriptions are limited to cases that are out of ordinary implementation or have some important points. Repetitive implementations, are mentioned only in the first documented file.
 
 
 ## Model
@@ -85,7 +85,7 @@ struct Coin: Identifiable, Codable {
 We can have "currenPrice" attribute in our data model which we want to be encoded to JSON data that its relative key is "current_price". So we simply use CodingKey enum for this purpose.(If the attribute in our data model and the JSON key are the same we can simply omit givving them any string value.)
 
 **Attributes**
-This model struct is created based on the [APIURL](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h). I decided to alter some of the fields in both the struct attributes and the coding keys because I simply didn't want to show the data provided with those attributes. 
+This struct model is created based on the [APIURL](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h). I decided to alter some of the fields in both the struct attributes and the coding keys because I simply didn't want to show the data provided with those attributes. 
 
 **updateHoldings function**
 The coin data model has a function for the purpose of updating the user portfolio(updaing user holding currencies). This function is then used whenever the user want to add a new currecny to his portfolio or update his old holdings.
@@ -99,12 +99,33 @@ Each coin object's rank is determined by its market capitalization.
 **SparklineIn7D struct**
 This struct holds an array of price changes for each coin object.
 
---
-### Statistic
---
+---
+### CoinDetaileData
+**Attributes**
+This model is created based on the [APIURL]( https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false). Not all the API JSON response are included in this data. 
+
+**readableDescription computed property**
+```swift
+    var readableDescription: String?{
+        description?.en?.removingHTMLOccurances
+    }
+
+```
+
+description field that its values is coming from the API response, contains HTML codes and isn't proper to be shown to the user. "removingHMLOccurances" is a computed property, implemented in the String Extension(you can find it below) that remove all the HTML-related characters from a string and returns the readable string.
+
+**Links struct**
+Holds a coin's website and its Subredit link if it existed.
+
+**Description struct**
+Holds a coin's description if there is one.
+
+---
 ### MarketData
 --
-### CoinDetaileData
+### Statistic
+
+
 
 
 ## View
