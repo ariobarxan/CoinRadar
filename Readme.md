@@ -1,7 +1,7 @@
 # Coin Radar
 ## Screenshots
 
-<img src="ReadmeImages/CoinRadar.gif">
+<img src="ReadmeImages/CoinRadar.gif" height="500">
 
 
 ## About
