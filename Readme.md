@@ -52,6 +52,7 @@ The given description is succint as much as possible. View descriptions are only
 
 ## Model
 The model layer constitutes the gateway to the data that are shown in the app. They are created based on the API JSON response. They conform to Codeable protocol(responsible for coding and encoding). Initialization and updating the objects are done in their structs.
+
 ### Coin
 **Conformances protocols**
 Coin model conforms both to [Identifiable](https://developer.apple.com/documentation/swift/identifiable) and [Codeable](https://developer.apple.com/documentation/swift/codable) protocols. 
@@ -81,9 +82,7 @@ struct Coin: Identifiable, Codable {
 }
 ```
 
-````
 We can have "currenPrice" attribute in our data model which we want to be encoded to JSON data that its relative key is "current_price". So we simply use CodingKey enum for this purpose.(If the attribute in our data model and the JSON key are the same we can simply omit givving them any string value.)
-````
 
 **Attributes**
 This model struct is created based on the [APIURL](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h). I decided to alter some of the fields in both the struct attributes and the coding keys because I simply didn't want to show the data provided with those attributes. 
