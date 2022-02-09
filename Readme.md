@@ -63,7 +63,7 @@ Identifiable gives our data model a unique id so a object would be distinguishab
 **CodingKeys enum**
 Encoding and decoding the data to and from this struct is possible through the implmentation of CodingKeys which is a enum that confroms to String and [CodingKey](https://developer.apple.com/documentation/swift/codingkey) protocol. This enum holds all the struct model's attributes and their relative string value in API call.(It is required if you want to conform to Codeable protocol)
 
-```
+```swift
 struct Coin: Identifiable, Codable {
     let id: String
     let currentPrice: Double
@@ -82,9 +82,7 @@ struct Coin: Identifiable, Codable {
 ```
 
 ````
-```
 We can have "currenPrice" attribute in our data model which we want to be encoded to JSON data that its relative key is "current_price". So we simply use CodingKey enum for this purpose.(If the attribute in our data model and the JSON key are the same we can simply omit givving them any string value.)
-```
 ````
 
 **Attributes**
