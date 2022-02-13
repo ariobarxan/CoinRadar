@@ -1,7 +1,7 @@
 # Coin Radar
 ## Screenshots
 
-<img src="ReadmeImages/CoinRadar.gif" height="500" align="middle">
+<img src="ReadmeImages/CoinRadar.gif" height="500">
 
 
 ## About
@@ -111,7 +111,6 @@ This model is created based on the [APIURL]( https://api.coingecko.com/api/v3/co
     }
 
 ```
-
 description field that its values is coming from the API response, contains HTML codes and isn't proper to be shown to the user. "removingHMLOccurances" is a computed property, implemented in the String Extension(you can find it below) that remove all the HTML-related characters from a string and returns the readable string.
 
 **Links struct**
@@ -122,17 +121,67 @@ Holds a coin's description if there is one.
 
 ---
 ### MarketData
---
+**Attributes**
+This model is created base on the [APIURL](https://api.coingecko.com/api/v3/global). Not all the API JSON response fields are included in this data model.
+
+**marketCap computed property**
+If total-market-cap data is available then this attribute returns formatted String abbreviation of that data.
+
+**volume computed property**
+If total voulme is available then this attribute returns formatted string abbreviation of that data.
+
+**btcDom computed property**
+This attribute retrurns Bitcoin dominance as a string.
+
+**NOTE**
+By default all the data are shown in USD.
+
+---
 ### Statistic
+**Attributes**
+This model is created based on the needs to show data on the screen. This model is specifically designed for StaticView. You can see statistics in detail view and Main View Bitcoin Dominance and ... . 
 
-
+**Initializer**
+This data model has a custom initializer because not all the Statistic Views have percentage string.
 
 
 ## View
 ### CoinRadarApp
---
+**showLunchView Attribute**
+It is a state variable which based on its value CoinRadarApp decides to whther shows the lunch screen animation or the app Home view.
+
+**viewModel Attribute**
+It is a StateObject that is sent to the Home View as an environment object. The reason of sending it as an environment object is convenience. In this way all Child Views of HomeView can access this ViewModel through environment object. This object is referenced within HomeStatView and PortfolioView as well as in HomeView.
+
+**Initializer**
+This view's initializer is responsible for some of global view configurations such UINavigationBar text color and etc. 
+
+**Note:**
+Navigation View is implemented here so all the child views would inherit it. 
+
+**Scene Body**
+Because we want to be sure that the lunch animation in Lunchview is being presented infront all Views we gave it zIndex value.
+
+---
 ### Lunch 
---
+**Description**
+Due to limitation of LunchScreen in info plist which is the prefered way to use lunch screens by apple in SwiftUI, this app is using UIKIt Lunch screen. The lunch screen is a black view with the logo at the center. The animation in lunch screen is implemented in LunchView.
+
+
+**main Body**
+The main body presnets the app logo and loading animation.
+
+**Animation**
+The loading animation is a simple Time-publisher based. The animating text is achieved by creating a HStack of Loading string and applying y offset on specific string character in each 0.1 seconds. There is also a transition effect on inserting the view on the screen. The loading animitation si initialized by toggling a state variable that is changed to true on onAppear call. 
+
+As mentioned the animation is based on a time publisher which pulish each 0.1 second on the main queue the timer is used call the block code that manages the animation. Time published value is recieved on onReceive call. 
+
+There is counter that will be increamented on each new published value and then animation will be applied to corresponding index in the HStack of strings. The counter will be reset to zero if it reaches the loading string lenth count. 
+
+---
+### LunchView
+
+---
 ### Components -> CircleButton
 ### Components -> CircleButtonAnimation
 ### Components -> CoinImageView
