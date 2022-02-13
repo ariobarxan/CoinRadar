@@ -163,10 +163,14 @@ Navigation View is implemented here so all the child views would inherit it.
 Because we want to be sure that the lunch animation in Lunchview is being presented infront all Views we gave it zIndex value.
 
 ---
-### Lunch 
+### Lunch
 **Description**
 Due to limitation of LunchScreen in info plist which is the prefered way to use lunch screens by apple in SwiftUI, this app is using UIKIt Lunch screen. The lunch screen is a black view with the logo at the center. The animation in lunch screen is implemented in LunchView.
 
+---
+### LunchView
+**Description**
+This view will be loaded after the lunch screen and because it has the same View elements it seems that the lunch screen is still presented. This view will be dissmissed after three rounds of animation. 
 
 **main Body**
 The main body presnets the app logo and loading animation.
@@ -176,79 +180,105 @@ The loading animation is a simple Time-publisher based. The animating text is ac
 
 As mentioned the animation is based on a time publisher which pulish each 0.1 second on the main queue the timer is used call the block code that manages the animation. Time published value is recieved on onReceive call. 
 
-There is counter that will be increamented on each new published value and then animation will be applied to corresponding index in the HStack of strings. The counter will be reset to zero if it reaches the loading string lenth count. 
-
----
-### LunchView
+There is counter that will be increamented on each new published value and then animation will be applied to corresponding index in the HStack of strings. The counter will be reset to zero if it reaches the loading string lenth count.  
 
 ---
 ### Components -> CircleButton
+This view is just a circular image view that is used as button in other views. The button action is dealt with in the tapGesture call. 
+---
 ### Components -> CircleButtonAnimation
+In the main View when the screen is transitioning to the portfolio view the button on top left having an animation which is used to grab the user attention that there is a new feature here. This animation is basically a circle which scale up while lsoing oppacity. 
+---
 ### Components -> CoinImageView
+
+---
 ### Components -> SearchBarView
+---
 ### Components -> StatisticeView
+---
 ### Components -> CloseButton
+---
 ### Components -> CoinLogoView
 --
 ### Home -> HomeView
+---
 ### Home -> HomeStatView
+---
 ### Home -> CoinRowView
+---
 ### Home -> PortfolioView
---
+---
 ### Detail -> DetailView
+---
 ### Detail -> ChartView
---
+---
 ### Settings -> SettingView
 
 
 
 ## ViewModels
 ### Components -> CoinImageViewModel
---
+---
 ### Home -> HomeViewModel
---
+---
 ### Detail -> DetailViewModel
---
+---
 ### Settings -> SettingViewModel
 
 
 ## Services
 ### CoreDataServices -> PortfolioDataService
---
+---
 ### APIServices -> CoinAPIService
+---
 ### APIServices -> CoinImageService
+---
 ### APIServices -> MarketAPIService
+---
 ### APIServices -> CoinDetailAPIService
 
 
 ## Resources
 ### CoreData -> PortfolioContainer
---
+---
 ### Assets 
 
 
 ## Utils 
 ### Singletons -> DeveloperPreview
+---
 ### Singletons -> SharedResources
+---
 ### Singletons -> NetworkManager
+---
 ### Singletons -> LocalFileManager
+---
 ### Singletons -> HapticManager
---
+---
 ### Modifiers -> Frame
---
+---
 ### Globals -> DeviceAttribtes
---
+---
 ### Enums -> AppStyle
+---
 ### Enums -> Device
+---
 ### Enums -> Errors
+---
 ### Enums -> SortOptions
 --
 ### Extensions -> Color
+---
 ### Extensions -> View
+---
 ### Extensions -> PreviewProvider
+---
 ### Extensions -> Double
+---
 ### Extensions -> UIAplication
+---
 ### Extensions -> Date
+---
 ### Extensions -> String  
 
 
