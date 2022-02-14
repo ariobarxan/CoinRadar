@@ -316,3 +316,4 @@ In the main View when the screen is transitioning to the portfolio view the butt
 - [ ] Decimal keyboard on Ipad
 - [ ] Default background modifier
 - [ ] Architecture improvements: Protocols, dependency injection
+- [ ] Refactor: global functions 
