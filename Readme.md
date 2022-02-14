@@ -184,23 +184,83 @@ There is counter that will be increamented on each new published value and then 
 
 ---
 ### Components -> CircleButton
+**Preface**
+Coponent views generally are views that are used in multiple other views.
+
+**Description**
 This view is just a circular image view that is used as button in other views. The button action is dealt with in the tapGesture call. 
 ---
 ### Components -> CircleButtonAnimation
 In the main View when the screen is transitioning to the portfolio view the button on top left having an animation which is used to grab the user attention that there is a new feature here. This animation is basically a circle which scale up while lsoing oppacity. 
 ---
 ### Components -> CoinImageView
+This component view is an image view that is responsible to show coin images. This view comes with a view model. The view model is responsible to brings back the coin image if the view model fails to due so the view presents an image view with a question mark. View model is initialized in the init functions because it needs the image url and coind id that are provided through injection.
 
 ---
 ### Components -> SearchBarView
+The serch bar view is a custom search bar implemented with a custom overlay and background view on a text field.
 ---
 ### Components -> StatisticeView
+Static view is the most used view in the app that can be seen in both home view and detail view, basically wherever there is need to show stats. This view gets a Statistic model and displays its data. Note that not all Statistic models have percentage changes value so in order to keep the views organized and aligned I decided to hide the subview that shows percentage changes and as results all statisticviews got three texts but in some the third is hidden(zero opacity).
 ---
 ### Components -> CloseButton
+Close button is nothing more than label that displays xmark. The close functionality is then implemented through a tab gesture in the parent view.   
 ---
 ### Components -> CoinLogoView
+This view displays coin image with its symbol and its complete name. This view gets a coin object and extract needed data from it and then displays them through its subviews.
 --
 ### Home -> HomeView
+**Extension**
+It's a presonal preference, to put all the views in a separate extensions to just simply have emptire thus cleaner view struct. In rare cases that some process is needed for showing views and the view model is flooded with functions, small functions may find their way through this extension in the view file. 
+
+**showPortfoilio Variable**
+Based on this variable's value the home view is going to show coinList or portfolioList.
+
+**showPortfolioView Variable**
+Based on this variable's value, the portfolioList presents the portfoilioView which the user can add and update his assets through.
+
+**selectedCoin Variable**
+Whenever the user choose a coin in the portfolioView this variable will hold a reference to that view and then when the user puts its entries the updated data will be send to the viewModel.
+
+**showDetailView Variable**
+Navigation to the detailView is done based on this variable.
+
+**showSettingView Variable**
+Setting view is shown whenever this variable's value changes to true.
+
+**viewModel Variable**
+It's an environment object that is sent from the CoinRadarApp and is accessible for this view and all its child views.
+
+**backgroundView View**
+It's a simple custom color layer that ignores safe areas.
+
+**header View**
+This view is presented at the top of the homeview and contains three main subViews. A leading button, a trailing button and a center title. All its three subviews are changing (with animation) based on the showPortfolio variable. This three subviews are responsible for showing settingView and PortfolioView through a tab gesture(All is done with animation). 
+
+**columnTitles View**
+Based on the showPortfolio variable this view shows either two columns or three columns. Columns are Coin, Holding, Price. The columns are responsible for sorting the coinList and PortfolioList. The sorting is implemented through a tab gesture for each subview.
+
+**coinsList View**
+It's a coin lists that gets its data from the view model and displays them. The referesh functionality is available.
+
+**portfolioList View**
+It's a portfolio lists (that shows all the user holding assets and if there is none it shows a message on the screen) same as the coinList.
+
+**portfolioEmptyView View**
+It's the message that will be shown if the user portflio is empty.
+
+**segue Function**
+Through this function the detailView will be shown by changing selectedCoin variable to the tapped coin and toggling selectedCoin to true.
+
+**body**
+The body displays all the above views and there are a couple of things that needed to be enlightened. ProtfolioView (The view that the user can add and update his holdings) is a sheet that is presented on the backgroundView. Note that sheets can't be presented on a same view, this means we can't present two different sheet on a same view.
+
+Setting View is as same as PortfolioView and is a sheet that is presenteed on the whole content layer(all views except header).
+
+Transition to portfolioList from coinList is done with a transition and animation.
+
+NavigationLink to the detailView is done on the background function call and is presenting DetailLoadingView.
+
 ---
 ### Home -> HomeStatView
 ---
