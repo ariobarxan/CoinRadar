@@ -263,10 +263,50 @@ NavigationLink to the detailView is done on the background function call and is 
 
 ---
 ### Home -> HomeStatView
+This view shows header stats for both coinList and portfoliolist(HomeView subviews)
 ---
 ### Home -> CoinRowView
+This view is a row that is used in both coinList and portfoliolist(HomeView subviews) as the list row.
 ---
 ### Home -> PortfolioView
+This view is the sheet view that is presented on the HomeView on its backgroundView. The view is responsible to give the user the ability to add and holding update.
+
+**viewModel Variable**
+It's the home view model environment object. 
+
+**dismiss Variable**
+The new swiftUI envrionment dismiss solution. 
+
+**selectedCoin Variable**
+This variable holds the user selected coin and get the user entries and update the holding through its update function. 
+
+**quantity Variable**
+It's a string that changes base on the user entry and hold the mount that user holds a particular asset.
+
+**showCheckMark Variable**
+This boolean shows a checkmark image on the screen after the user tapped save button and after some seconds the corresponding checkMarkView will be disappeared.
+
+**coinScroll View**
+It's a hortizontal Lazy Scroll that shows either the user holding assets or the user searching coin.
+
+**portfolioInputSection View**
+This view is for user to add his holdings. As some  views have animation and we don't want to this view have an animation we displaed the animation by giving nil value to it and custom UUID to disable the animation. 
+
+**trailingNavBarButton View**
+This view contains both save button and checkmark view. The checkmark will be shown for a couple of seconds and then will be appeared.
+
+**currentValue Function**
+This function return a double that is the value of the user holding asset in dollars.
+
+**saveButtonPressed Function**
+Save action, get the coin holding amount and update portfolio via viewModel.  
+
+**removeSelectedCoin Function**
+After saving the asset the selected coin will be emptied. 
+
+**updateSelectedCoin Function**
+Updaing the holding amounts is done through this function.
+
 ---
 ### Detail -> DetailView
 ---
