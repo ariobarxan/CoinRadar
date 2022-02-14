@@ -25,7 +25,6 @@ struct CoinRadarApp: App {
     //MARK: - Main Window
     var body: some Scene {
         WindowGroup {
-            
             ZStack{
                 NavigationView{
                     HomeView()

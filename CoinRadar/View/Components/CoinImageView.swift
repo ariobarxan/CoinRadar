@@ -10,14 +10,14 @@ import SwiftUI
 struct CoinImageView: View {
     
     //MARK: - Var
-    
     @StateObject private var viewModel: CoinImageViewModel
     
-    
+    //MARK: - Initializer
     init(url: String, coinID: String){
         _viewModel = StateObject(wrappedValue: CoinImageViewModel(url: url, coinID: coinID))
     }
     
+    //MARK: - Body
     var body: some View {
         ZStack{
             if let image = viewModel.image{
