@@ -59,6 +59,7 @@
 		28A27BCC27AAF1420075C8D6 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCB27AAF1420075C8D6 /* LocalFileManager.swift */; };
 		28A27BCE27AB09440075C8D6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCD27AB09440075C8D6 /* SearchBarView.swift */; };
 		28A27BD027AB0C750075C8D6 /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCF27AB0C750075C8D6 /* UIAplication.swift */; };
+		F43AC6D92BA943F800289BA5 /* CoinAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		28A27BCB27AAF1420075C8D6 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		28A27BCD27AB09440075C8D6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		28A27BCF27AB0C750075C8D6 /* UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
+		F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +220,7 @@
 				2895A2F327A9B2B9006BFC1D /* Model */,
 				2895A2F227A9B2B5006BFC1D /* View */,
 				2895A2F127A9B2AB006BFC1D /* ViewModels */,
-				2895A2F427A9B2E2006BFC1D /* Repositories */,
+				F43AC6D72BA9435900289BA5 /* Repository */,
 				28A27BC827AAE67A0075C8D6 /* Services */,
 				2895A2F027A9B2A4006BFC1D /* Resources */,
 				2895A2EF27A9B29F006BFC1D /* Utils */,
@@ -288,13 +290,6 @@
 				28913F0527AD7E99005F2E75 /* CoinDetaileData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2895A2F427A9B2E2006BFC1D /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		2895A2F527A9B2EE006BFC1D /* APIServices */ = {
@@ -403,6 +398,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F43AC6D72BA9435900289BA5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,6 +487,7 @@
 				28A27BBB27AAC98B0075C8D6 /* CoinAPIService.swift in Sources */,
 				28913EFC27AD55CC005F2E75 /* HapticManager.swift in Sources */,
 				28913F0627AD7E99005F2E75 /* CoinDetaileData.swift in Sources */,
+				F43AC6D92BA943F800289BA5 /* CoinAPIRepository.swift in Sources */,
 				2895A31E27A9D3C1006BFC1D /* HomeViewModel.swift in Sources */,
 				28913F0227AD741C005F2E75 /* DetailView.swift in Sources */,
 				28A27BCE27AB09440075C8D6 /* SearchBarView.swift in Sources */,

@@ -15,12 +15,11 @@ final class HomeViewModel: ObservableObject{
     @Published var searchString: String     = ""
     @Published var isLoading:    Bool       = false
     @Published var sortOption:   SortOption = .holdings
-    private let coinAPIService              = CoinAPIService()
     private let marketAPIService            = MarketAPIService()
     private let portfolioCDService          = PortfolioDataService()
     private var cancellables                = Set<AnyCancellable>()
-    
-   
+    private var coinAPIRepository = CoinAPIRepository()
+
     
     init(){
         addSubscribers()
@@ -30,7 +29,7 @@ final class HomeViewModel: ObservableObject{
         
         ///Search String and APIService combined -> Update coins base on search and sort option
         $searchString
-            .combineLatest(coinAPIService.$coins, $sortOption)
+            .combineLatest(coinAPIRepository.$coins, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterAndSortCoins)
             .sink { [weak self] filteredCoins in
@@ -155,7 +154,7 @@ final class HomeViewModel: ObservableObject{
     }
     func reloadData(){
         self.isLoading = true
-        coinAPIService.downloadCoins()
+        coinAPIRepository.getCoins()
         marketAPIService.downloadMarketData()
         HapticManager.notification(type: .success)
     }
