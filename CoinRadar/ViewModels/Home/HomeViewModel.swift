@@ -15,10 +15,10 @@ final class HomeViewModel: ObservableObject{
     @Published var searchString: String     = ""
     @Published var isLoading:    Bool       = false
     @Published var sortOption:   SortOption = .holdings
-    private let marketAPIService            = MarketAPIService()
+    private var coinAPIRepository = CoinAPIRepository()
+    private let marketAPIRepository = MarketAPIRepository()
     private let portfolioCDService          = PortfolioDataService()
     private var cancellables                = Set<AnyCancellable>()
-    private var coinAPIRepository = CoinAPIRepository()
 
     
     init(){
@@ -52,7 +52,7 @@ final class HomeViewModel: ObservableObject{
         
         
         ///Market data
-        marketAPIService.$marketData
+        marketAPIRepository.$marketData
             .combineLatest($profolioCoin)
             .map(mapGlobalMarketData)
             .sink { [weak self] returnedStats in
@@ -155,7 +155,7 @@ final class HomeViewModel: ObservableObject{
     func reloadData(){
         self.isLoading = true
         coinAPIRepository.getCoins()
-        marketAPIService.downloadMarketData()
+        marketAPIRepository.getMarketData()
         HapticManager.notification(type: .success)
     }
 }

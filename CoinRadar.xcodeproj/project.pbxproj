@@ -60,6 +60,7 @@
 		28A27BCE27AB09440075C8D6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCD27AB09440075C8D6 /* SearchBarView.swift */; };
 		28A27BD027AB0C750075C8D6 /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCF27AB0C750075C8D6 /* UIAplication.swift */; };
 		F43AC6D92BA943F800289BA5 /* CoinAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */; };
+		F43AC6DB2BA9564300289BA5 /* MarketAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		28A27BCD27AB09440075C8D6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		28A27BCF27AB0C750075C8D6 /* UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
 		F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIRepository.swift; sourceTree = "<group>"; };
+		F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAPIRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */,
+				F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				28A27BC727AAE4E00075C8D6 /* CoinImageViewModel.swift in Sources */,
 				281A0DE027AC76B5008015A2 /* CoinLogoView.swift in Sources */,
 				28250AB027AEFAA300ABEAE6 /* ChartView.swift in Sources */,
+				F43AC6DB2BA9564300289BA5 /* MarketAPIRepository.swift in Sources */,
 				2895A2E227A9B27F006BFC1D /* CoinRadarApp.swift in Sources */,
 				28A27BCC27AAF1420075C8D6 /* LocalFileManager.swift in Sources */,
 				287C4CA327AC58C5007E848A /* MarketData.swift in Sources */,
