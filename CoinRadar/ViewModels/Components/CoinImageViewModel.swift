@@ -16,19 +16,19 @@ class CoinImageViewModel: ObservableObject{
     var url: String
     var coinID: String
     
-    private let APIService: CoinImageService
+    private let repository: CoinImageAPIRepository
     private var cancellables = Set<AnyCancellable>()
     
     init(url: String, coinID: String){
         self.url        = url
         self.coinID     = coinID
-        self.APIService = CoinImageService(url: url, coinID: coinID)
+        self.repository = CoinImageAPIRepository(coinID: coinID, coinURl: url)
         self.addSubscribers()
         self.isLoading  = true
     }
     
     private func addSubscribers(){
-        APIService.$image
+        repository.$image
             .sink {[weak self] _ in
                 guard let self = self else {return}
                 self.isLoading = false
@@ -38,6 +38,4 @@ class CoinImageViewModel: ObservableObject{
             }
             .store(in: &cancellables)
     }
-    
-    
 }

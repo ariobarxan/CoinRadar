@@ -61,6 +61,7 @@
 		28A27BD027AB0C750075C8D6 /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A27BCF27AB0C750075C8D6 /* UIAplication.swift */; };
 		F43AC6D92BA943F800289BA5 /* CoinAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */; };
 		F43AC6DB2BA9564300289BA5 /* MarketAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */; };
+		F480B48E2BAA7D0C00D69BFA /* CoinImageAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480B48D2BAA7D0C00D69BFA /* CoinImageAPIRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		28A27BCF27AB0C750075C8D6 /* UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
 		F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIRepository.swift; sourceTree = "<group>"; };
 		F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAPIRepository.swift; sourceTree = "<group>"; };
+		F480B48D2BAA7D0C00D69BFA /* CoinImageAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageAPIRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 			children = (
 				F43AC6D82BA943F800289BA5 /* CoinAPIRepository.swift */,
 				F43AC6DA2BA9564300289BA5 /* MarketAPIRepository.swift */,
+				F480B48D2BAA7D0C00D69BFA /* CoinImageAPIRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				2895A30027A9B754006BFC1D /* Device.swift in Sources */,
 				28913F0827AD81F2005F2E75 /* CoinDetailAPIService.swift in Sources */,
 				28A27BC327AADD200075C8D6 /* Errors.swift in Sources */,
+				F480B48E2BAA7D0C00D69BFA /* CoinImageAPIRepository.swift in Sources */,
 				287C4C9F27AC4EE0007E848A /* StatisticView.swift in Sources */,
 				28A27BBD27AACA7C0075C8D6 /* SharedResources.swift in Sources */,
 				28A27BCA27AAE6920075C8D6 /* CoinImageService.swift in Sources */,
