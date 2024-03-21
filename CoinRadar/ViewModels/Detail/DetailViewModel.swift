@@ -19,18 +19,18 @@ class DetailViewModel: ObservableObject{
     @Published var coin: Coin
     
     
-    private let coinDetaiAPIlService: CoinDetailAPIService
+    private let coinDetailAPIRepository: CoinDetailAPIRepository
     private var cancellables = Set<AnyCancellable>()
     
     
     init(coin: Coin){
         self.coin              = coin
-        self.coinDetaiAPIlService = CoinDetailAPIService(coinID: coin.id)
+        self.coinDetailAPIRepository = CoinDetailAPIRepository(coinID: coin.id)
         addSubscribers()
     }
     
     private func addSubscribers() {
-        coinDetaiAPIlService.$coinDetails
+        coinDetailAPIRepository.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatisticArrays)
             .sink { [weak self] returnedAraays in
@@ -41,7 +41,7 @@ class DetailViewModel: ObservableObject{
         
         
         ///Refactor and grab data in mapping
-        coinDetaiAPIlService.$coinDetails
+        coinDetailAPIRepository.$coinDetails
             .sink { [weak self] returnedDetails in
                 self?.coinDescription = returnedDetails?.readableDescription
                 self?.websiteURL      = returnedDetails?.links?.homepage?.first
@@ -111,6 +111,5 @@ class DetailViewModel: ObservableObject{
         
         return additionalArray
     }
-    
 }
 
